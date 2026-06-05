@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Req2Cost - New Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Req2Cost Logo" class="logo-img">
+            <h1>Req2Cost</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="new_project.html">New Project</a>
+            <a href="catalog.html">Requirements Catalog</a>
+            <a href="projects_db.php">Project History</a>
+            <a href="team.html">Team Profiles</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2>Define Project Requirements</h2>
+                <button type="button" id="secretModeBtn" onclick="toggleSecretMode()" style="background-color: #34495e; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">🔒 Secret Mode</button>
+            </div>
+            <p>Select the required capabilities for the RCWS platform. The system will map these to hardware blocks and estimate the cost.</p>
+            
+            <form id="requirementsForm" action="process_project.php" method="POST">
+                <fieldset>
+                    <legend>General Details</legend>
+                    <label for="clientName">Client / Project Name:</label>
+                    <input type="text" id="clientName" name="clientName" placeholder="e.g., Navy Project Alpha" required style="width: 100%; padding: 5px;">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Software & Safety</legend>
+                    <label><input type="checkbox" name="requirements[]" value="BIT" class="req-checkbox"> BIT (Hardware & Firmware Diagnostics)</label><br>
+                    <label><input type="checkbox" name="requirements[]" value="FIZ" class="req-checkbox"> FIZ (Physical Obstacle Elevation Override)</label><br>
+                    <label><input type="checkbox" name="requirements[]" value="FPZ" class="req-checkbox"> FPZ (Fire Prohibit Zone)</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tracking & Acquisition</legend>
+                    <label><input type="checkbox" name="requirements[]" value="Auto Track" class="req-checkbox"> Auto Track</label><br>
+                    <label><input type="checkbox" name="requirements[]" value="ATR" class="req-checkbox"> ATR (Automatic Target Recognition)</label><br>
+                    <label><input type="checkbox" name="requirements[]" value="BDA" class="req-checkbox"> Bullets Optic Identify (BDA)</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Premium Fire Control</legend>
+                    <label><input type="checkbox" name="requirements[]" value="Auto Boresight" class="req-checkbox"> Auto Boresight (Zero Operator Intervention)</label>
+                </fieldset>
+
+                <fieldset id="classifiedSection" style="display: none; background-color: #ffebee; border: 2px solid #e74c3c; margin-top: 15px;">
+                    <legend style="color: #c0392b; font-weight: bold;">[CLASSIFIED] Restricted Capabilities</legend>
+                    <label style="color: #c0392b;"><input type="checkbox" name="requirements[]" value="Search Radar" class="req-checkbox"> AESA Search Radar & Target Slaving</label><br>
+                    <label style="color: #c0392b;"><input type="checkbox" name="requirements[]" value="Auto Fire" class="req-checkbox"> Autonomous Fire Algorithm (Lethal AI)</label>
+                </fieldset>
+
+                <br>
+                <input type="submit" value="Analyze Requirements & Save to Database" class="btn" style="background-color: #27ae60; color: white; padding: 12px 20px; border: none; cursor: pointer; font-size: 16px; border-radius: 5px; width: 100%;">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact Support: idanchen.job@gmail.com</p>
+        <p>Developed by: Idan Chen</p>
+    </footer>
+
+    <script>
+        function toggleSecretMode() {
+            var secretSection = document.getElementById('classifiedSection');
+            var btn = document.getElementById('secretModeBtn');
+            
+            if (secretSection.style.display === 'none') {
+                secretSection.style.display = 'block';
+                btn.innerHTML = "🔓 Disable Secret Mode";
+                btn.style.backgroundColor = "#e74c3c";
+            } else {
+                secretSection.style.display = 'none';
+                btn.innerHTML = "🔒 Secret Mode";
+                btn.style.backgroundColor = "#34495e";
+            }
+        }
+    </script>
+</body>
+</html>

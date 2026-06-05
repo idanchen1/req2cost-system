@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Req2Cost - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Req2Cost Logo" class="logo-img">
+            <h1>Req2Cost</h1>
+        </div>
+      <nav>
+            <a href="index.html">Home</a>
+            <a href="new_project.html">New Project</a>
+            <a href="catalog.html">Requirements Catalog</a>
+            <a href="projects_db.php">Project History</a>
+            <a href="team.html">Team Profiles</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>System Scope & Cost Estimator</h2>
+                <p>Welcome to the ultimate tool for defense system requirement analysis.</p>
+            </div>
+        </section>
+
+        <section style="text-align: center; padding: 40px; background-color: #fff;">
+            <h3 style="color: #2c3e50;">Learn About RCWS Operations</h3>
+            <p style="color: #7f8c8d; margin-bottom: 20px;">Watch our overview and see system examples below.</p>
+            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/En-C2xldPtQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px;"></iframe>
+            
+            <br>
+            <img src="sys1.jpg" alt="RCWS Interface" style="width: 250px; border-radius: 5px; margin: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            <img src="sys2.jpg" alt="Targeting Module" style="width: 250px; border-radius: 5px; margin: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        </section>
+
+        <section class="estimator-section">
+            <h3>Quick Project Estimator</h3>
+            <p>Select a basic system type to get a rough cost estimate:</p>
+            <form id="quickForm">
+                <label for="systemType">System Complexity:</label>
+                <select id="systemType" name="systemType">
+                    <option value="">-- Choose an option --</option>
+                    <option value="150000">Basic (e.g., Simple Sensor Integration)</option>
+                    <option value="350000">Medium (e.g., Full RCWS Module)</option>
+                    <option value="800000">High (e.g., Advanced Fire-Control System)</option>
+                </select>
+                <br><br>
+                <input type="button" value="Calculate Rough Estimate" onclick="calculateEstimate()" class="btn">
+                <h4 id="resultMessage"></h4>
+            </form>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; background-color: #2c3e50; color: white;">
+        <p>Contact Support: idanchen.job@gmail.com | Developed by: Idan Chen</p>
+        
+        <div style="margin-top: 10px; font-size: 0.9em;">
+            <a href="https://www.rafael.co.il/" target="_blank" style="color: #3498db; margin: 0 10px; text-decoration: none;">Rafael Advanced Defense Systems</a> |
+            <a href="https://github.com/idanchen1" target="_blank" style="color: #3498db; margin: 0 10px; text-decoration: none;">My GitHub</a> |
+            <a href="https://cpanel.byethost.com/index.php" target="_blank" style="color: #3498db; margin: 0 10px; text-decoration: none;">ByetHost CPanel</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

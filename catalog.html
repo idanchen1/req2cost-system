@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Req2Cost - Requirements Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Req2Cost Logo" class="logo-img">
+            <h1>Req2Cost</h1>
+        </div>
+     <nav>
+            <a href="index.html">Home</a>
+            <a href="new_project.html">New Project</a>
+            <a href="catalog.html">Requirements Catalog</a>
+            <a href="projects_db.php">Project History</a>
+            <a href="team.html">Team Profiles</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" style="height: 200px;">
+            <div class="hero-content">
+                <h2>Capabilities Catalog</h2>
+                <p>Full breakdown of available RCWS building blocks and base costs.</p>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <table class="req-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Capability</th>
+                        <th>Hardware / Software Block</th>
+                        <th>Base Cost ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Software & Safety</td><td>BIT</td><td>Hardware & Firmware Diagnostics</td><td>5,000</td></tr>
+                    <tr><td>Software & Safety</td><td>FIZ</td><td>Physical Obstacle Elevation Override</td><td>12,000</td></tr>
+                    <tr><td>Software & Safety</td><td>FPZ</td><td>Fire Prohibit Zone Mapping DB</td><td>15,000</td></tr>
+                    <tr><td>Tracking & Targeting</td><td>Auto Track</td><td>Optical Camera + Tracker Logic</td><td>25,000</td></tr>
+                    <tr><td>Tracking & Targeting</td><td>ATR</td><td>Automatic Target Recognition (FLIR)</td><td>45,000</td></tr>
+                    <tr><td>Tracking & Targeting</td><td>BDA</td><td>Bullets Optic Identify (LRF + Calc)</td><td>35,000</td></tr>
+                    <tr><td>Premium Options</td><td>Auto Boresight</td><td>Zero Operator Intervention Calibration</td><td>85,000</td></tr>
+                </tbody>
+            </table>
+            
+            <div style="text-align: center; margin-top: 15px; color: #7f8c8d; font-size: 0.9em;">
+                <script>
+                    document.write("Catalog generated on: " + new Date().toLocaleDateString());
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact Support: idanchen.job@gmail.com</p>
+        <p>Developed by: Idan Chen</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
